@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NakamaShop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c5c88cfa7928fce450d8983cb573b5ac14987a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24950daaa4bf0e3f3f4b66ccf4bc137d87d35881")]
 [assembly: System.Reflection.AssemblyProductAttribute("NakamaShop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NakamaShop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

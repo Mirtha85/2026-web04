@@ -80,3 +80,4 @@ C:\NakamaShop\NakamaShop\obj\Debug\net9.0\compressed\wfgx5h1yeh-2z0ns9nrw6.gz
 C:\NakamaShop\NakamaShop\obj\Debug\net9.0\compressed\8hd8a37wdh-muycvpuwrr.gz
 C:\NakamaShop\NakamaShop\obj\Debug\net9.0\compressed\2nxfy3hc2j-87fc7y1x7t.gz
 C:\NakamaShop\NakamaShop\obj\Debug\net9.0\compressed\lh6fp9suz6-3i10u86o57.gz
+C:\NakamaShop\NakamaShop\obj\Debug\net9.0\NakamaShop.sourcelink.json
