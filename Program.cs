@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using NakamaShop.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,3 +27,11 @@ if (app.Environment.IsDevelopment())
 app.MapDefaultControllerRoute(); 
 
 app.Run();
+=======
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapGet("/", () => "Hello World!");
+
+app.Run();
+>>>>>>> 1f08c9d4ee8bd32a7008a16f607a0e3476a0cab6
