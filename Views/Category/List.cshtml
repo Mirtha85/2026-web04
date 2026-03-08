@@ -1,0 +1,33 @@
+@using NakamaShop.ViewModels
+@model CategoryListViewModel
+
+<h1 class="anime-title-main">EXPLORA POR CATEGORÍA</h1>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    @foreach (var category in Model.Categories)
+    {
+        <div class="col">
+            <div class="card h-100 anime-card shadow">
+                <div class="card-body p-4 text-center">
+                    @* Título de categoría con estilo de logo *@
+                    <h2 class="category-title-card">@category.CategoryName.ToUpper()</h2>
+                    
+                    <hr class="border-warning opacity-75 my-3">
+                    
+                    <p class="card-text text-white mb-4">
+                        @category.Description
+                    </p>
+                    
+                    <div class="mt-auto">
+                        <a asp-controller="Anime" 
+                           asp-action="List" 
+                           asp-route-category="@category.CategoryName" 
+                           class="btn btn-primary btn-lg">
+                           Explorar esta Ruta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
