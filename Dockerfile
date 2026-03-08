@@ -21,9 +21,9 @@ WORKDIR "/src/."
 RUN dotnet build "NakamaShop.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "NakamaShop.dil" -c Release -o /app/publish
+RUN dotnet publish "NakamaShop.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "NakamaShop.dil"]
+ENTRYPOINT ["dotnet", "NakamaShop.dll"]
