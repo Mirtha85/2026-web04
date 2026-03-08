@@ -21,11 +21,11 @@ jobs:
       with:
         dotnet-version: 9.0.x
     - name: Restore dependencies
-      run: dotnet restore NakamaShop/NakamaShop.csproj
+      run: dotnet restore NakamaShop.csproj
     - name: Build
-      run: dotnet build NakamaShop/NakamaShop.csproj --no-restore
+      run: dotnet build NakamaShop.csproj --no-restore
     - name: Test
-      run: dotnet test NakamaShop/NakamaShop.csproj --no-build --verbosity normal
+      run: dotnet test NakamaShop.csproj --no-build --verbosity normal
 
     # containerization steps
     - name: Build Docker image
