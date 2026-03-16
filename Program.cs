@@ -1,11 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using NakamaShop.Data;
 using NakamaShop.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // 1. REGISTRAR SERVICIOS (Inyección de Dependencias)
 // Esto le dice a la app: "Cuando alguien pida un ICategoryRepository, dale el Mock"
-builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-builder.Services.AddScoped<IAnimeProductRepository, MockAnimeProductRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IAnimeProductRepository, AnimeProductRepository>();
+builder.Services.AddDbContext<NakamaShopDbContext>(options =>
+options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Agregamos el soporte para Controladores y Vistas (MVC)
 builder.Services.AddControllersWithViews();
@@ -23,6 +27,7 @@ if (app.Environment.IsDevelopment())
 
 // 3. CONFIGURAR LAS RUTAS
 // Esto hace que si vas a /Anime/List, busque el AnimeController y la acción List
-app.MapDefaultControllerRoute(); 
-
+app.UseStaticFiles();
+app.MapDefaultControllerRoute();
+DbInitializer.Seed(app);
 app.Run();
