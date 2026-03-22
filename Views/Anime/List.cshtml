@@ -7,27 +7,30 @@
         @foreach (var anime in Model.AnimeProducts)
         {
             <div class="col">
-                <div class="card h-100 anime-card shadow">
-                    @* Contenedor de imagen: Fondo blanco y ajuste para que no se corte la figura *@
-                    <img src="@anime.ImageThumbnailUrl" 
-                         onerror="this.src='/Images/Sombrero de paja de Monkey D. Luffy.jpg'" 
-                         class="card-img-top" alt="@anime.Name"
-                         style="height: 250px; object-fit: contain; background: white; padding: 15px; border-bottom: 3px solid #F2CB05;">
-                    
-                    <div class="card-body text-center d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="category-title-card" style="font-size: 1.6rem;">@anime.Name.ToUpper()</h5>
-                            <span class="badge bg-success shadow-sm">Bs @anime.Price.ToString("N2")</span>
-                        </div>
+                <a asp-controller="Anime" asp-action="Details" 
+                   asp-route-id="@anime.AnimeProductId"
+                   class="text-decoration-none">
+                    <div class="card h-100 anime-card shadow">
+                        <img src="@anime.ImageThumbnailUrl" 
+                             onerror="this.src='/Images/Sombrero de paja de Monkey D. Luffy.jpg'" 
+                             class="card-img-top" alt="@anime.Name"
+                             style="height: 250px; object-fit: contain; background: white; padding: 15px; border-bottom: 3px solid #F2CB05;">
                         
-                        <p class="text-warning small mb-1 fw-bold">Serie: @anime.AnimeSeries</p>
-                        <p class="card-text text-white">@anime.ShortDescription</p>
-                        
-                        <div class="mt-auto pt-3">
-                            <button class="btn btn-primary w-100">AÑADIR AL BARCO</button>
+                        <div class="card-body text-center d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="category-title-card" style="font-size: 1.6rem;">@anime.Name.ToUpper()</h5>
+                                <span class="badge bg-success shadow-sm">Bs @anime.Price.ToString("N2")</span>
+                            </div>
+                            
+                            <p class="text-warning small mb-1 fw-bold">Serie: @anime.AnimeSeries</p>
+                            <p class="card-text text-white">@anime.ShortDescription</p>
+                            
+                            <div class="mt-auto pt-3">
+                                <button class="btn btn-primary w-100">AÑADIR AL BARCO</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         }
     </div>

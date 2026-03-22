@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using NakamaShop.Models;
-using NakamaShop.ViewModels; // No olvides este using
+using NakamaShop.ViewModels;
 
 namespace NakamaShop.Controllers
 {
@@ -15,13 +15,21 @@ namespace NakamaShop.Controllers
 
         public IActionResult List()
         {
-            // Creamos el ViewModel con los 50 productos y un título personalizado
             AnimeListViewModel animeListViewModel = new AnimeListViewModel(
-                _animeProductRepository.AllAnimeProducts, 
+                _animeProductRepository.AllAnimeProducts,
                 "Todos los Tesoros del Grand Line"
             );
 
             return View(animeListViewModel);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var animeProduct = _animeProductRepository.GetAnimeProductById(id);
+            if (animeProduct == null)
+                return NotFound();
+
+            return View(animeProduct);
         }
     }
 }

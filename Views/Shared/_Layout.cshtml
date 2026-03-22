@@ -15,16 +15,20 @@
     <header>
         <nav class="navbar navbar-expand-lg shadow-lg" style="background-color: #004D99; border-bottom: 5px solid #F2CB05;">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center" asp-controller="Anime" asp-action="List">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
                     <img src="~/Images/Logo del sombrero de paja.png" alt="Logo" style="height: 50px; margin-right: 10px;">
                     <span style="font-family: 'Bangers', cursive; color: #F2CB05; font-size: 2.2rem; text-shadow: 2px 2px #000;">NAKAMASHOP</span>
                 </a>
                 <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav ms-auto text-center" style="font-family: 'Bangers', cursive; font-size: 1.5rem;">
-                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Anime" asp-action="List">TESOROS</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Category" asp-action="List">RUTAS</a></li>
-                    </ul>
-                </div>
+    <ul class="navbar-nav me-auto text-center" style="font-family: 'Bangers', cursive; font-size: 1.5rem;">
+        <li class="nav-item"><a class="nav-link text-white" asp-controller="Home" asp-action="AboutMe">ABOUT ME</a></li>
+        <li class="nav-item"><a class="nav-link text-white" asp-controller="Home" asp-action="Contact">CONTACTO</a></li>
+    </ul>
+    <ul class="navbar-nav ms-auto text-center" style="font-family: 'Bangers', cursive; font-size: 1.5rem;">
+        <li class="nav-item"><a class="nav-link text-white" asp-controller="Anime" asp-action="List">TESOROS</a></li>
+        <li class="nav-item"><a class="nav-link text-white" asp-controller="Category" asp-action="List">RUTAS</a></li>
+    </ul>
+</div>
             </div>
         </nav>
     </header>

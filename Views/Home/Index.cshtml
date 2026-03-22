@@ -1,0 +1,81 @@
+@model NakamaShop.ViewModels.HomeViewModel
+
+@* CARRUSEL *@
+<div id="carouselNakama" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselNakama" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselNakama" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselNakama" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/Images/carousel1.jpg" class="d-block w-100" alt="One Piece"
+                 style="height: 500px; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+            <img src="/Images/carousel2.jpg" class="d-block w-100" alt="Digimon"
+                 style="height: 500px; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+            <img src="/Images/carousel3.jpg" class="d-block w-100" alt="Dragon Ball"
+                 style="height: 500px; object-fit: cover;">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselNakama" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselNakama" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+@* TEXTO CENTRAL *@
+<div class="text-center my-4">
+    <img src="/Images/Logo del sombrero de paja.png" class="mb-3" style="width: 80px;" alt="Logo"/>
+    <h2 style="font-family: 'Bangers', cursive; color: #004D99; font-size: 2.5rem;">
+        Tesoros de la Semana
+    </h2>
+    <p style="font-family: 'Bangers', cursive; font-size: 1.3rem; color: #555;">
+        ¡Los mejores coleccionables del Gran Viaje!
+    </p>
+</div>
+
+@* PRODUCTOS DE LA SEMANA *@
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var anime in Model.ProductsOfTheWeek)
+        {
+            <div class="col">
+                <a asp-controller="Anime" asp-action="Details"
+                   asp-route-id="@anime.AnimeProductId"
+                   class="text-decoration-none">
+                    <div class="card h-100 anime-card shadow">
+                        <img src="@anime.ImageThumbnailUrl"
+                             onerror="this.src='/Images/Sombrero de paja de Monkey D. Luffy.jpg'"
+                             class="card-img-top" alt="@anime.Name"
+                             style="height: 250px; object-fit: contain; background: white; 
+                                    padding: 15px; border-bottom: 3px solid #F2CB05;">
+
+                        <div class="card-body text-center d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="category-title-card" style="font-size: 1.6rem;">
+                                    @anime.Name.ToUpper()
+                                </h5>
+                                <span class="badge bg-success shadow-sm">
+                                    Bs @anime.Price.ToString("N2")
+                                </span>
+                            </div>
+
+                            <p class="text-warning small mb-1 fw-bold">Serie: @anime.AnimeSeries</p>
+                            <p class="card-text text-white">@anime.ShortDescription</p>
+
+                            <div class="mt-auto pt-3">
+                                <button class="btn btn-primary w-100">⚓ AÑADIR AL BARCO</button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

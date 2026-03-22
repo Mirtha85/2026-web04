@@ -1,0 +1,36 @@
+@model NakamaShop.Models.AnimeProduct
+
+<div class="container my-5">
+    <div class="row gx-5">
+        
+        <div class="col-md-5 text-center">
+            <img src="@Model.ImageThumbnailUrl" 
+                 onerror="this.src='/Images/Sombrero de paja de Monkey D. Luffy.jpg'"
+                 alt="@Model.Name"
+                 class="img-fluid shadow"
+                 style="max-height: 450px; object-fit: contain; background: white; 
+                        padding: 20px; border: 3px solid #F2CB05; border-radius: 10px;">
+        </div>
+
+        <div class="col-md-7 anime-card p-4" style="border-radius: 20px;">
+            <h2 class="category-title-card mb-1">@Model.Name.ToUpper()</h2>
+            <p class="text-warning fw-bold mb-1">Serie: @Model.AnimeSeries</p>
+            <hr style="border-color: #F2CB05;">
+
+            <h5 class="text-white mb-2">@Model.ShortDescription</h5>
+            <p class="text-white-50">@Model.LongDescription</p>
+
+           <span class="badge bg-success shadow-sm fs-5">Bs @Model.Price.ToString("N2")</span>
+            <div class="mt-4">
+                <button class="btn btn-primary w-100 py-2 mb-2" style="font-size: 1.2rem;">
+                    ⚓ AÑADIR AL BARCO
+                </button>
+                <a asp-controller="Anime" asp-action="List" 
+                   class="btn btn-primary w-100 py-2" style="font-size: 1.2rem;">
+                    ← VOLVER A LOS TESOROS
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>

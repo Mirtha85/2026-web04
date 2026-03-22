@@ -1,0 +1,53 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7 anime-card p-4" style="border-radius: 20px;">
+
+            <h2 class="category-title-card text-center mb-4">📩 CONTACT US</h2>
+
+            @if (ViewBag.Success != null)
+            {
+                <div class="alert alert-success text-center fw-bold">
+                    @ViewBag.Success
+                </div>
+            }
+
+            <form asp-controller="Home" asp-action="Contact" method="post">
+
+                <div class="mb-3">
+                    <label class="text-warning fw-bold fs-5">👤 Full Name</label>
+                    <input type="text" name="name" 
+                           class="form-control mt-1" 
+                           placeholder="Enter your name..."
+                           required
+                           style="background-color: #003580; color: white; border: 2px solid #F2CB05;">
+                </div>
+
+                <div class="mb-3">
+                    <label class="text-warning fw-bold fs-5">📧 Email</label>
+                    <input type="email" name="email" 
+                           class="form-control mt-1" 
+                           placeholder="Enter your email..."
+                           required
+                           style="background-color: #003580; color: white; border: 2px solid #F2CB05;">
+                </div>
+
+                <div class="mb-3">
+                    <label class="text-warning fw-bold fs-5">💬 Message</label>
+                    <textarea name="message" 
+                              class="form-control mt-1" 
+                              rows="5" 
+                              placeholder="Write your message..."
+                              required
+                              style="background-color: #003580; color: white; border: 2px solid #F2CB05;"></textarea>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary w-100 py-2" style="font-size: 1.3rem;">
+                        ⚓ SEND MESSAGE
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
