@@ -79,7 +79,6 @@ C:\NakamaShop\NakamaShop\obj\Debug\net9.0\compressed\cbx4kcw3f3-ttgo8qnofa.gz
 C:\NakamaShop\NakamaShop\obj\Debug\net9.0\compressed\wfgx5h1yeh-2z0ns9nrw6.gz
 C:\NakamaShop\NakamaShop\obj\Debug\net9.0\compressed\8hd8a37wdh-muycvpuwrr.gz
 C:\NakamaShop\NakamaShop\obj\Debug\net9.0\compressed\2nxfy3hc2j-87fc7y1x7t.gz
-C:\NakamaShop\NakamaShop\obj\Debug\net9.0\compressed\lh6fp9suz6-3i10u86o57.gz
 C:\NakamaShop\NakamaShop\obj\Debug\net9.0\NakamaShop.sourcelink.json
 C:\NakamaShop\NakamaShop\bin\Debug\net9.0\Humanizer.dll
 C:\NakamaShop\NakamaShop\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -195,3 +194,4 @@ C:\NakamaShop\NakamaShop\bin\Debug\net9.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\NakamaShop\NakamaShop\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\NakamaShop\NakamaShop\obj\Debug\net9.0\NakamaShop.csproj.AssemblyReference.cache
 C:\NakamaShop\NakamaShop\obj\Debug\net9.0\NakamaShop.csproj.Up2Date
+C:\NakamaShop\NakamaShop\obj\Debug\net9.0\compressed\lh6fp9suz6-117wh5izcd.gz

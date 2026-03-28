@@ -158,3 +158,21 @@ body {
     color: #1877F2 !important; /* Azul oficial de Facebook */
     text-shadow: 0 0 10px rgba(24, 119, 242, 0.5);
 }
+
+.btn-barco {
+    background-color: #CC0000;
+    color: white;
+    border: 3px solid #8B0000;
+    font-family: 'Bangers', cursive;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #000;
+    transition: all 0.2s ease;
+}
+
+.btn-barco:hover {
+    background-color: #000000;
+    color: #F2CB05;
+    border-color: #F2CB05;
+    text-shadow: 1px 1px 3px #000;
+}

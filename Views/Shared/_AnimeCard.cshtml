@@ -1,0 +1,38 @@
+@model NakamaShop.Models.AnimeProduct
+
+<div class="col">
+    <a asp-controller="Anime" asp-action="Details"
+       asp-route-id="@Model.AnimeProductId"
+       class="text-decoration-none">
+        <div class="card h-100 anime-card shadow">
+            <img src="@Model.ImageThumbnailUrl"
+                 onerror="this.src='/Images/Sombrero de paja de Monkey D. Luffy.jpg'"
+                 class="card-img-top" alt="@Model.Name"
+                 style="height: 250px; object-fit: contain; background: white;
+                        padding: 15px; border-bottom: 3px solid #F2CB05;">
+
+            <div class="card-body text-center d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="category-title-card" style="font-size: 1.6rem;">
+                        @Model.Name.ToUpper()
+                    </h5>
+                    <span class="badge bg-success shadow-sm">
+                        Bs @Model.Price.ToString("N2")
+                    </span>
+                </div>
+
+                <p class="text-warning small mb-1 fw-bold">Serie: @Model.AnimeSeries</p>
+                <p class="card-text text-white">@Model.ShortDescription</p>
+
+                <div class="mt-auto pt-3">
+                    <a class="btn btn-barco w-100 mb-2 fw-bold"
+   asp-controller="ShoppingCart"
+   asp-action="AddToShoppingCart"
+   asp-route-animeProductId="@Model.AnimeProductId">
+    ⚓ AÑADIR AL BARCO
+</a>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

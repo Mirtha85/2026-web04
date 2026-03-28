@@ -1,0 +1,63 @@
+@model NakamaShop.ViewModels.ShoppingCartViewModel
+
+<div class="container my-4">
+    <h1 class="anime-title-main">🏴‍☠️ TU BARCO PIRATA</h1>
+
+    @if (!Model.ShoppingCart.ShoppingCartItems.Any())
+    {
+        <div class="alert alert-warning text-center mt-4">
+            <h4>¡Tu barco está vacío, nakama!</h4>
+            <a asp-controller="Anime" asp-action="List" class="btn btn-primary mt-2">
+                Ver todos los tesoros
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in Model.ShoppingCart.ShoppingCartItems)
+            {
+                <div class="col-12 mb-3">
+                    <div class="card anime-card shadow">
+                        <div class="card-body d-flex align-items-center gap-3">
+                            <img src="@item.AnimeProduct.ImageThumbnailUrl"
+                                 style="width: 80px; height: 80px; object-fit: contain; background: white;"
+                                 alt="@item.AnimeProduct.Name">
+
+                            <div class="flex-grow-1">
+                                <h5 class="text-white mb-1">@item.AnimeProduct.Name.ToUpper()</h5>
+                                <p class="text-warning mb-0 small">@item.AnimeProduct.AnimeSeries</p>
+                            </div>
+
+                            <div class="text-center">
+                                <span class="badge bg-secondary fs-6">x@item.Amount</span>
+                            </div>
+
+                            <div class="text-end">
+                                <span class="badge bg-success fs-6">
+                                    Bs @((item.AnimeProduct.Price * item.Amount).ToString("N2"))
+                                </span>
+                            </div>
+
+                            <a asp-controller="ShoppingCart"
+                               asp-action="RemoveFromShoppingCart"
+                               asp-route-animeProductId="@item.AnimeProduct.AnimeProductId"
+                               class="btn btn-danger btn-sm">✕</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="text-end mt-3">
+            <h4 class="text-white">
+                Total: <span class="badge bg-success fs-5">
+                    Bs @Model.ShoppingCartTotal.ToString("N2")
+                </span>
+            </h4>
+            <a asp-controller="Anime" asp-action="List" class="btn btn-outline-light mt-2">
+                Seguir explorando
+            </a>
+        </div>
+    }
+</div>
