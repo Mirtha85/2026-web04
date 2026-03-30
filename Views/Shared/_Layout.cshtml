@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,57 +12,80 @@
     
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg shadow-lg" style="background-color: #004D99; border-bottom: 5px solid #F2CB05;">
+        <nav class="navbar navbar-expand-lg shadow-lg"
+             style="background-color: #004D99; border-bottom: 5px solid #F2CB05;">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
-                    <img src="~/Images/Logo del sombrero de paja.png" alt="Logo" style="height: 50px; margin-right: 10px;">
-                    <span style="font-family: 'Bangers', cursive; color: #F2CB05; font-size: 2.2rem; text-shadow: 2px 2px #000;">NAKAMASHOP</span>
-                </a>
-                <div class="collapse navbar-collapse">
-    <ul class="navbar-nav me-auto text-center" style="font-family: 'Bangers', cursive; font-size: 1.5rem;">
-        <li class="nav-item"><a class="nav-link text-white" asp-controller="Home" asp-action="AboutMe">ABOUT ME</a></li>
-        <li class="nav-item"><a class="nav-link text-white" asp-controller="Home" asp-action="Contact">CONTACTO</a></li>
-    </ul>
-    <ul class="navbar-nav ms-auto text-center" style="font-family: 'Bangers', cursive; font-size: 1.5rem;">
-        <li class="nav-item"><a class="nav-link text-white" asp-controller="Anime" asp-action="List">TESOROS</a></li>
-        <li class="nav-item"><a class="nav-link text-white" asp-controller="Category" asp-action="List">RUTAS</a></li>
-        <li class="nav-item"><a class="nav-link text-white" asp-controller="ShoppingCart" asp-action="Index">🛒 BARCO</a>
-</li>
-    </ul>
-</div>
-            </div>
-        </nav>
-    </header>
+                    <img src="~/Images/Logo del sombrero de paja.png" alt="Logo"
+                         style="height: 50px; margin-right: 10px;">
+                        <span
+                        style="font-family: 'Bangers', cursive; color: #F2CB05; font-size: 2.2rem; text-shadow: 2px 2px #000;">NAKAMASHOP</span>
+                    </a>
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto text-center"
+                            style="font-family: 'Bangers', cursive; font-size: 1.5rem;">
+                            <li class="nav-item"><a class="nav-link text-white" asp-controller="Home"
+                                                        asp-action="AboutMe">ABOUT ME</a></li>
+                                <li class="nav-item"><a class="nav-link text-white" asp-controller="Home"
+                                                            asp-action="Contact">CONTACTO</a></li>
+                                </ul>
+                                <ul class="navbar-nav ms-auto text-center"
+                                    style="font-family: 'Bangers', cursive; font-size: 1.5rem;">
+                                    <li class="nav-item"><a class="nav-link text-white" asp-controller="Anime"
+                                                                asp-action="List">TESOROS</a></li>
+                                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Category"
+                                                                    asp-action="List">RUTAS</a></li>
+                                            <li class="nav-item"><a class="nav-link text-white" asp-controller="ShoppingCart"
+                                                                        asp-action="Index">🛒 BARCO</a>
+                                                                <li class="nav-item ms-lg-3">
+                                                                    <a class="nav-link btn btn-barco px-3 text-white" asp-controller="Customer"
+                                                                           asp-action="Register">
+                                                                        <i class="bi bi-person-plus-fill"></i> ¡UNIRSE!
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </header>
 
-    <div class="container mt-4">
-        @RenderBody()
-    </div>
+                                    <div class="container mt-4">
+                                        @RenderBody()
+                                    </div>
 
-    @* --- FOOTER RENOVADO CON CRÉDITOS Y REDES --- *@
-    <footer class="footer-anime py-4 mt-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0 footer-text">Creado por Deivy Ortiz</p>
-                </div>
+                                    @* --- FOOTER RENOVADO CON CRÉDITOS Y REDES --- *@
+                                    <footer class="footer-anime py-4 mt-5">
+                                        <div class="container">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                                                    <p class="mb-0 footer-text">Creado por Deivy Ortiz</p>
+                                                </div>
 
-                <div class="col-md-4 text-center mb-3 mb-md-0">
-                    <p class="mb-0 footer-text">© 2026 - <span class="footer-logo-text">NAKAMASHOP</span> - ¡Rumbo al One Piece! 🏴‍☠️</p>
-                </div>
+                                                <div class="col-md-4 text-center mb-3 mb-md-0">
+                                                    <p class="mb-0 footer-text">© 2026 - <span class="footer-logo-text">NAKAMASHOP</span> - ¡Rumbo al
+                                                        One Piece! 🏴‍☠️</p>
+                                                    </div>
 
-                <div class="col-md-4 text-center text-md-end">
-                    <div class="footer-socials">
-                        <a href="https://wa.me/qr/2CBIRXKUE33FI1" target="_blank" class="social-icon whatsapp"><i class="bi bi-whatsapp"></i></a>
-                        <a href="https://www.tiktok.com/hermanos.a.m?_r=1&_t=ZS-94V8C5ykoVR" target="_blank" class="social-icon tiktok"><i class="bi bi-tiktok"></i></a>
-                        <a href="https://www.facebook.com/share/1DKaLp9dCN/" target="_blank" class="social-icon facebook"><i class="bi bi-facebook"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+                                                    <div class="col-md-4 text-center text-md-end">
+                                                        <div class="footer-socials">
+                                                            <a href="https://wa.me/qr/2CBIRXKUE33FI1" target="_blank" class="social-icon whatsapp"><i
+                                                                class="bi bi-whatsapp"></i></a>
+                                                                <a href="https://www.tiktok.com/hermanos.a.m?_r=1&_t=ZS-94V8C5ykoVR" target="_blank"
+                                                                   class="social-icon tiktok"><i class="bi bi-tiktok"></i></a>
+                                                                <a href="https://www.facebook.com/share/1DKaLp9dCN/" target="_blank"
+                                                                   class="social-icon facebook"><i class="bi bi-facebook"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+                                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                        </body>
+
+                                    </html>

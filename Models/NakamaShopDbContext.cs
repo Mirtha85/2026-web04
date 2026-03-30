@@ -10,5 +10,7 @@ namespace NakamaShop.Models
         public DbSet<AnimeProduct> AnimeProducts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+
+        public DbSet<Customer> Customers { get; set; }
     }
 }

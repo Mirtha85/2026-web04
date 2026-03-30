@@ -1,0 +1,51 @@
+@model Customer
+
+<div class="container mt-5">
+    <h2 class="anime-title-main">¡Reclutar Nakama!</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-success text-center shadow" 
+                     style="background-color: #25D366; color: white; font-family: 'Bangers'; border: 3px solid #000; font-size: 1.5rem;">
+                    <i class="bi bi-check-circle-fill"></i> @ViewBag.Message
+                </div>
+            }
+
+            <div class="card p-4 shadow-lg" style="background-color: #fff9e6;"> 
+                <form asp-action="Register" method="post">
+                    
+                    <div class="mb-4">
+                        <label asp-for="Name" class="form-label fw-bold text-dark">Nombre del Pirata</label>
+                        <input asp-for="Name" class="form-control" placeholder="Ej: Monkey D. Luffy" required 
+                               style="border: 2px solid #004D99; border-radius: 10px;" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Email" class="form-label fw-bold text-dark">Correo de Gaviota (Email)</label>
+                        <input asp-for="Email" class="form-control" placeholder="luffy@grandline.com" required 
+                               style="border: 2px solid #004D99; border-radius: 10px;" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Address" class="form-label fw-bold text-dark">Dirección de la Isla / Barco</label>
+                        <input asp-for="Address" class="form-control" placeholder="Ej: Villa Foosha, Casa 1" required 
+                               style="border: 2px solid #004D99; border-radius: 10px;" />
+                    </div>
+
+                    <div class="mb-5">
+                        <label asp-for="City" class="form-label fw-bold text-dark">Ciudad / Reino</label>
+                        <input asp-for="City" class="form-control" placeholder="Ej: East Blue" required 
+                               style="border: 2px solid #004D99; border-radius: 10px;" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 shadow">
+                        ¡Reclutar!
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
